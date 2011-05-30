@@ -1,0 +1,109 @@
+//Variables
+@fontSize: 1.4em;
+@gray: #e0e0e0;
+@blue: #66a5e9;
+
+/**** Accordion stuff ******/
+div.accordion {
+	section {
+		font-size: @fontSize;
+		line-height: 20px;
+		
+		//The default is Collapsed
+		&:before {
+			content: "\0020";
+			background: url(accordion-arrows.png) no-repeat 0 0;
+			cursor: pointer;
+			display: block;
+			height: 18px;
+			width: 18px;
+			float: left;
+			margin-left: 15px;
+		}
+		> div { display: none; }
+		
+		//If the open class is added...
+		&.open {
+			&:before {
+				content: " ";
+				background: url(accordion-arrows.png) no-repeat 0 -18px;
+				cursor: pointer;
+				display: block;
+				height: 18px;
+				width: 18px;
+				float: left;
+				margin-left: 15px;
+			}
+			> div { display: block; }
+		}
+		
+		> h4 { 	
+			cursor: pointer; 
+			padding: 0 0 1em 40px; 
+			
+			&:hover { color: @blue; }				
+		}
+		
+		> div {
+			border-color: @gray;
+			border-style: solid;
+			border-width: 2px 0;
+			margin-bottom: 1em;
+	
+			//apply ClearFix
+			zoom:1;
+			
+			&:before, &:after {
+				content: "\0020";
+				display: block;
+				height: 0;
+				overflow: hidden;
+			}
+			&:after { clear: both; }
+			//done with clearfix
+							
+			> article {
+				padding: 1em 40px;
+				
+				&.withAside {
+					float: left;
+					border-right: 2px solid @gray;
+					padding-right: 1em;
+					width: 664px;
+				}
+			}
+			
+			> aside {
+				float: right;
+				width: 220px;
+				
+				> table {
+					width: 100%;
+					
+					caption { 
+						border-bottom: 2px solid @gray;
+					    padding: 5px 20px;
+					    text-align: left;
+					}
+					
+					tbody > tr {
+						background-color: #efefef;
+						
+						&:nth-child(even) { background-color: transparent; }
+						
+						> td { padding: 5px 20px; }
+					}
+				}
+				
+				> ul {
+					list-style-position: inside;
+					padding: 5px;
+				}
+				
+				> p {
+					padding: 5px;
+				}
+			} //aside
+		} //div
+	} //section
+} //div.accordion

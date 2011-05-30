@@ -1,0 +1,13 @@
+div.accordion section{font-size:1.4em;line-height:20px;}div.accordion section:before{content:"\0020";background:url(accordion-arrows.png) no-repeat 0 0;cursor:pointer;display:block;height:18px;width:18px;float:left;margin-left:15px;}
+div.accordion section>div{display:none;}
+div.accordion section.open:before{content:" ";background:url(accordion-arrows.png) no-repeat 0 -18px;cursor:pointer;display:block;height:18px;width:18px;float:left;margin-left:15px;}
+div.accordion section.open>div{display:block;}
+div.accordion section>h4{cursor:pointer;padding:0 0 1em 40px;}div.accordion section>h4:hover{color:#66a5e9;}
+div.accordion section>div{border-color:#e0e0e0;border-style:solid;border-width:2px 0;margin-bottom:1em;zoom:1;}div.accordion section>div:before,div.accordion section>div:after{content:"\0020";display:block;height:0;overflow:hidden;}
+div.accordion section>div:after{clear:both;}
+div.accordion section>div>article{padding:1em 40px;}div.accordion section>div>article.withAside{float:left;border-right:2px solid #e0e0e0;padding-right:1em;width:664px;}
+div.accordion section>div>aside{float:right;width:220px;}div.accordion section>div>aside>table{width:100%;}div.accordion section>div>aside>table caption{border-bottom:2px solid #e0e0e0;padding:5px 20px;text-align:left;}
+div.accordion section>div>aside>table tbody>tr{background-color:#efefef;}div.accordion section>div>aside>table tbody>tr:nth-child(even){background-color:transparent;}
+div.accordion section>div>aside>table tbody>tr>td{padding:5px 20px;}
+div.accordion section>div>aside>ul{list-style-position:inside;padding:5px;}
+div.accordion section>div>aside>p{padding:5px;}
