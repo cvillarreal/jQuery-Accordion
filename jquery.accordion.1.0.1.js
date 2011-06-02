@@ -1,6 +1,6 @@
 /*!
  * jQuery Accordion Plugin
- * version: 1.00 (30-MAY-2011)
+ * version: 1.0.1 (1-JUNE-2011)
  * @requires jQuery v1.3.2 or later
  *
  * Dual licensed under the MIT and GPL licenses:
@@ -12,7 +12,7 @@
 		'header'	: 'h4',
 		'container'	: 'div',
 		'speed'		: 250,
-		'openClass' : 'open'
+		'openClass'	: 'open'
 	}
 
 	var methods = {
@@ -36,18 +36,18 @@
 		}, 
 		
 		click : function () {
-			var $theAccordion = $(this).parent(),
-				theClasses	  = this.classList;
+			var $this = $(this),
+				$theAccordion = $this.parent();
 			
-			if (theClasses.contains(settings.openClass)) {
+			if ( $this.hasClass(settings.openClass)) {
 				//lets close it
 				$theAccordion.find(settings.container).slideUp(settings.speed, function () {
-					theClasses.remove(settings.openClass);
+					$this.removeClass(settings.openClass);
 				});
 			} else {
 				//lets open it
 				$theAccordion.find(settings.container).slideDown(settings.speed, function () {
-					theClasses.add(settings.openClass);
+					$this.addClass(settings.openClass);
 				});
 			}
 		}
